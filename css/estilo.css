@@ -1,0 +1,516 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+
+/* algumas classes padrão */
+
+.d-flex {
+    display: flex;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+
+/****************************** ********/
+
+
+/*button abrir menu*/
+
+#menu-toggler {
+    position: relative;
+    width: 30px;
+    z-index: 10;
+    margin: 0 5px 0 0;
+}
+
+#container-input-toggler {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#input-toggler {
+    position: absolute;
+    top: 19px;
+    right: 24px;
+    width: 23px;
+    height: 20px;
+    appearance: none;
+    z-index: 12;
+    opacity: 0;
+    background-color: #1ed760;
+}
+
+#menu-toggler div {
+    transition: all .4s;
+}
+
+#menu-toggler .toggler {
+    height: 3px;
+    border-radius: 1px;
+    background: white;
+    margin: 4px;
+}
+
+
+/*nav configuration style*/
+
+nav {
+    position: relative;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: black;
+    overflow: hidden;
+    width: 100vw;
+    /*max-width: 350px;*/
+    min-width: 280px;
+}
+
+nav a.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    align-items: center;
+}
+
+nav a.logo i.fa-spotify {
+    font-size: 24px;
+    margin-right: .3rem;
+}
+
+nav #container-links-menu {
+    /* display: none;*/
+    top: 0;
+    right: 0px;
+    position: fixed;
+    z-index: 0;
+    margin-right: -770px;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    padding: 35px;
+    transition: margin-right .6s;
+}
+
+
+/*abrir e fechar menu*/
+
+#input-toggler:checked {
+    position: fixed;
+}
+
+#input-toggler:checked~#menu-toggler {
+    position: fixed;
+    right: 19px;
+    top: 12px;
+}
+
+#input-toggler:checked~#container-links-menu {
+    margin-right: 0px;
+}
+
+#input-toggler:checked~#menu-toggler #bar-2 {
+    opacity: 0;
+}
+
+#input-toggler:checked~#menu-toggler #bar-1 {
+    transform: rotate(45deg);
+    transform-origin: -2px 12px;
+}
+
+#input-toggler:checked~#menu-toggler #bar-3 {
+    transform: rotate(-45deg);
+    transform-origin: 11px -5px;
+}
+
+
+/*nav li configuration style****************/
+
+nav #container-links-menu ul {
+    list-style: none;
+}
+
+nav #container-links-menu ul li {
+    margin: 0 0 2rem 0;
+}
+
+nav #container-links-menu ul li a {
+    color: white;
+    font-style: none;
+    text-decoration: none;
+}
+
+nav #container-links-menu ul li a:hover {
+    color: #1ed760;
+}
+
+
+/*links internos****************************/
+
+nav ul#links-internos {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+nav ul#links-internos li:last-child {
+    width: 20px;
+    background-color: white;
+    height: 2px;
+    cursor: auto;
+}
+
+
+/*links usuários****************************/
+
+nav ul#links-usuario {
+    font-size: 28px;
+    font-weight: 400;
+    flex-direction: column;
+    height: 55%;
+}
+
+nav ul#links-usuario li:first-child {
+    margin-top: .5rem;
+}
+
+nav ul#links-usuario li:last-child {
+    margin: auto 0 0;
+    padding-bottom: 0px;
+}
+
+
+/*header**************************/
+
+header {
+    width: 100vw;
+    height: 100vh;
+    background-color: #2941ab;
+    background-image: url(https://www-growth.scdn.co/static/home/bursts-mobile.svg);
+    background-position: center top 30%;
+    background-repeat: no-repeat;
+    background-size: 190%;
+}
+
+
+/*esta é uma configuração para telas maiores*/
+
+
+/*header div#content-header {
+        width: 100%;
+        max-width: 800px;
+        min-width: 800px;
+        margin: 100px auto;
+        flex-direction: column;
+        color: #1ed760;
+    }*/
+
+header div#content-header {
+    width: 100%;
+    margin: 200px auto;
+    flex-direction: column;
+    color: #1ed760;
+}
+
+
+/*esta é uma configuração para telas maiores*/
+
+
+/*header div#content-header h1 {
+        font-size: 104px;
+        font-weight: 900;
+        letter-spacing: -7px;
+        text-align: center;
+        line-height: 100px;
+    }*/
+
+header div#content-header h1 {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: -3px;
+    text-align: center;
+    line-height: 56px;
+}
+
+header div#content-header p {
+    font-size: 18px;
+    font-weight: 400;
+    width: 300px;
+    line-height: 30px;
+    margin: 2rem auto 0;
+    text-align: center;
+}
+
+
+/*button *************/
+
+header div#content-header button {
+    border: none;
+    background-color: #1ed760;
+    padding: 1rem 2rem;
+    letter-spacing: -.3px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #2941ab;
+    width: max-content;
+    margin: 2.5rem auto;
+}
+
+header div#content-header button:hover {
+    font-size: 15px;
+    padding: 1.05rem 2.05rem;
+}
+
+
+/**  footer ****************************/
+
+footer {
+    background-color: black;
+    padding: 1rem;
+}
+
+footer h2 a {
+    text-decoration: none;
+    margin: 2rem 0;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    align-items: center;
+}
+
+footer h2 i.fa-spotify {
+    font-size: 24px;
+    margin-right: .3rem;
+}
+
+footer h3 {
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #919496;
+    margin: 1.5rem 0;
+}
+
+footer section {
+    flex-direction: column;
+}
+
+footer section p {
+    flex-direction: column;
+}
+
+footer section p a {
+    font-style: none;
+    font-size: 15px;
+    line-height: 24px;
+    max-width: max-content;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+footer section p a:hover {
+    color: #1ed760;
+}
+
+footer section#redes-sociais {
+    margin-top: 5rem;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+
+footer section#redes-sociais div {
+    border-radius: 100px;
+    background-color: rgb(34, 35, 38);
+    width: 45px;
+    height: 45px;
+    margin: 0 .5rem 0 0;
+}
+
+footer section#redes-sociais a {
+    margin: auto;
+    text-decoration: none;
+    border-radius: 100px;
+    font-size: 24px;
+    color: white;
+}
+
+footer section#redes-sociais a:hover {
+    color: #1ed760;
+}
+
+footer section#links-politica {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer section#links-politica span {
+    color: #919496;
+    font-size: 10px;
+    font-weight: 400;
+    min-width: 100px;
+    line-height: 25px;
+    margin-left: 2rem;
+}
+
+footer section#links-politica p {
+    min-width: 200px;
+}
+
+footer section#links-politica p a {
+    color: #919496;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0 1rem 0 0;
+}
+
+footer section#links-politica p a:hover {
+    color: #1ed760;
+}
+
+
+/****início media queres****************************************
+    *************************************************************/
+
+@media (min-width: 480px) {
+    header {
+        height: 130vh;
+    }
+    header div#content-header h1 {
+        font-size: 90px;
+        letter-spacing: -7px;
+        line-height: 100px;
+    }
+}
+
+@media (min-width: 768px) {
+    nav {
+        padding: 15px 10%;
+    }
+    header div#content-header h1 {
+        font-size: 108px;
+    }
+    header div#content-header p {
+        font-size: 20px;
+        width: 100%;
+    }
+    nav div#container-links-menu {
+        margin-right: -1000px;
+    }
+    #input-toggler {
+        right: 11%;
+    }
+    #input-toggler:checked~#menu-toggler {
+        right: 10.5%;
+    }
+    /*footer *************************/
+    footer div {
+        max-width: 768px;
+        margin: 0 auto;
+    }
+    div#logo-footer a.logo {
+        font-size: 1.5rem;
+    }
+    div#logo-footer .fa-spotify {
+        font-size: 2.5rem;
+    }
+    footer div#section-central {
+        display: flex;
+        justify-content: space-between;
+    }
+    footer div#section-final {
+        display: block;
+    }
+    footer section#links-politica p a,
+    footer section#links-politica span {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1000px) {
+    nav {
+        padding: 25px 7rem;
+    }
+    nav#menu a.logo {
+        font-size: 1.5rem;
+    }
+    nav#menu .fa-spotify {
+        font-size: 2.5rem;
+    }
+    #input-toggler,
+    #menu-toggler {
+        display: none;
+    }
+    nav ul#links-internos {
+        font-size: 28px;
+    }
+    ul#links-internos li:last-child {
+        transform: rotate(90deg);
+        transform-origin: 2px 9px;
+    }
+    nav ul#links-usuario {
+        height: 0%;
+    }
+    nav ul#links-usuario li {
+        font-weight: 400;
+    }
+    nav ul#links-usuario li:last-child {
+        display: none;
+    }
+    nav div#container-links-menu {
+        display: flex;
+        margin-right: 0;
+        height: min-content;
+        position: relative;
+        padding: 0;
+        justify-content: flex-end;
+    }
+    nav div#container-links-menu ul {
+        display: flex;
+        flex-direction: row;
+    }
+    nav div#container-links-menu ul li,
+    div#container-links-menu ul li:first-child,
+    div#container-links-menu ul li:last-child {
+        margin: 0 1rem;
+        padding: 0;
+    }
+    nav div#container-links-menu ul a {
+        font-size: 16px;
+    }
+    /*header***********/
+    header {
+        background-image: url(https://www-growth.scdn.co/static/home/bursts-mobile.svg);
+        background-size: 134%;
+        background-position: 116% 58%;
+        background-repeat: no-repeat;
+    }
+}
+
+@media (min-width: 1250px) {
+    header div#content-header h1 {
+        font-size: 156px;
+        line-height: 166px;
+        font-weight: 600;
+    }
+}
